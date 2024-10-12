@@ -1,0 +1,31 @@
+package {{.PackageName}}
+
+import (
+	"net/http"
+
+	"github.com/danielgtaylor/huma/v2"
+)
+
+type Repo interface {
+	
+}
+
+type deps struct {
+	Repo Repo
+	API  huma.API
+}
+
+func New(API huma.API, repo Repo) {
+	d := deps{API: API, Repo: repo}
+
+	huma.Register(
+		d.API,
+		huma.Operation{
+			Method:      http.MethodGet,
+			Path:        "/",
+			Summary:     "Handle Me",
+			Middlewares: huma.Middlewares{},
+		},
+		d.handleMe,
+	)
+}
