@@ -30,7 +30,7 @@ func Handle(c *cli.Context) error {
 	}
 
 	basePackageDir := "api"
-	if c.String("base") != "" {
+	if c.String("base") != "api" {
 		basePackageDir = c.String("base")
 	}
 
@@ -38,7 +38,6 @@ func Handle(c *cli.Context) error {
 	if err != nil {
 		return err
 	}
-
 
 	err = generateFeatureDir(basePackageDir, packageName)
 	if err != nil {
@@ -58,6 +57,7 @@ func Handle(c *cli.Context) error {
 	return nil
 }
 
+// generateBaseDirIfNotExists will generate a base feature folder if base package dir does not exist
 func generateBaseDirIfNotExists(basePackageDir string) error {
 	baseTarget := filepath.Join(PWD, basePackageDir)
 

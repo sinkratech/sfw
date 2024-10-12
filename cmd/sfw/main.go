@@ -21,7 +21,14 @@ func main() {
 						Name:    "feature",
 						Aliases: []string{"feat", "f"},
 						Usage:   "Generate features in target directory",
-						Action:  feature.Handle,
+						Flags: []cli.Flag{
+							&cli.StringFlag{
+								Name:  "base",
+								Value: "api",
+								Usage: "Base directory for all features",
+							},
+						},
+						Action: feature.Handle,
 					},
 				},
 			},
