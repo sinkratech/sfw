@@ -3,7 +3,6 @@ module github.com/sinkratech/sfw
 go 1.23.0
 
 require (
-	github.com/danielgtaylor/huma/v2 v2.23.0
 	github.com/samuelsih/formattag v0.0.15
 	github.com/urfave/cli/v2 v2.27.4
 )

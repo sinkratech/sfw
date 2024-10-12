@@ -13,8 +13,8 @@ func main() {
 		Usage: "Mini framework for development with huma",
 		Commands: []*cli.Command{
 			{
-				Name:    "gen",
-				Aliases: []string{"g"},
+				Name:    "generate",
+				Aliases: []string{"gen", "g"},
 				Usage:   "Generate something you want (features, i18n, etc.)",
 				Subcommands: []*cli.Command{
 					{
