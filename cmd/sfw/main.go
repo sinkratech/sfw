@@ -9,8 +9,9 @@ import (
 
 func main() {
 	app := cli.App{
-		Name:  "sfw",
-		Usage: "Mini framework for development with huma",
+		Suggest: true,
+		Name:    "sfw",
+		Usage:   "Mini framework for development with huma",
 		Commands: []*cli.Command{
 			{
 				Name:    "generate",
